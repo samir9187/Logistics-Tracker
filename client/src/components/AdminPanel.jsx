@@ -26,7 +26,7 @@ const AdminPanel = () => {
     }
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/orders/${orderId}/status`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}/status`, {
         status,
         location,
         notes,

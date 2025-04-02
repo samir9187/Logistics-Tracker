@@ -9,7 +9,7 @@ const Dashboard = () => {
   const handleSearch = async () => {
     try {
       console.log('Fetching order data for ID:', orderId);
-      const response = await axios.get(`http://localhost:5000/api/orders/${orderId}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}`);
       // console.log('Response data:', response.data); 
       setOrderData(response.data);
       setError('');

@@ -115,11 +115,11 @@ const CreateOrder = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/orders", orderData);
-      setMessage(`✅ Order created successfully! Order ID: ${response.data.order_id}`);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/orders`, orderData);
+      setMessage(`Order created successfully! Order ID: ${response.data.order_id}`);
     } catch (error) {
-      console.error("❌ Error creating order:", error);
-      setMessage("⚠️ Failed to create order.");
+      console.error("Error creating order:", error);
+      setMessage("Failed to create order.");
     }
   };
 
