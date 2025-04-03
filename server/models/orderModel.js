@@ -53,7 +53,6 @@ export const addOrderStatus = async (orderId, status, location, notes) => {
         );
       }
   
-      // Insert initial shipping status
       await connection.query(
         'INSERT INTO ShippingStatus (order_id, status, location, timestamp, notes) VALUES (?, ?, ?, NOW(), ?)',
         [orderId, 'Order Placed', 'System', 'Order received and processing initiated']
